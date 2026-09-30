@@ -238,12 +238,36 @@ input {
 }
 
 .todo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin-top: 18px;
   padding-top: 12px;
   border-top: 1px solid var(--border-color);
-  text-align: right;
   color: var(--muted-color);
   font-weight: 600;
+}
+
+.clear-completed-btn {
+  border: 1px solid var(--danger-color);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--danger-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.clear-completed-btn:hover:not(:disabled) {
+  background: var(--danger-hover-bg);
+}
+
+.clear-completed-btn:disabled {
+  border-color: var(--border-color);
+  color: var(--muted-color);
+  cursor: not-allowed;
 }
 
 [hidden] {
