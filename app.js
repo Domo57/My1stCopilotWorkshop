@@ -64,7 +64,9 @@ function renderTodos() {
     emptyState.textContent = '還沒有任何待辦事項，新增一個吧！';
     emptyState.hidden = false;
   } else if (visibleTodos.length === 0) {
-    emptyState.textContent = '沒有符合此篩選條件的待辦事項。';
+    emptyState.textContent = currentFilter === 'completed'
+      ? '目前沒有已完成的事項。未出現在此清單中的項目只是被篩選隱藏，並未刪除。'
+      : '沒有符合此篩選條件的待辦事項。';
     emptyState.hidden = false;
   } else {
     emptyState.hidden = true;
